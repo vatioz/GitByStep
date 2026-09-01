@@ -4,6 +4,7 @@ import { parseScript } from './git/parser';
 import { REMOTE_NAME } from './git/repo';
 import { buildTimeline, worldAt } from './git/timeline';
 import { computeLayoutContext } from './layout/layout';
+import { AboutModal } from './components/AboutModal';
 import { CommandPalette } from './components/CommandPalette';
 import { ExplanationPanel } from './components/ExplanationPanel';
 import { Logo } from './components/Logo';
@@ -50,6 +51,7 @@ export default function App() {
   const [playRequested, setPlayRequested] = useState(false);
   const [speed, setSpeed] = useState(1000);
   const [copied, setCopied] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   const lines = useMemo(() => parseScript(script), [script]);
   const timeline = useMemo(() => buildTimeline(lines), [lines]);
@@ -173,8 +175,13 @@ export default function App() {
           <button className="ghost" onClick={share}>
             {copied ? 'link copied ✓' : 'share link'}
           </button>
+          <button className="ghost" onClick={() => setAboutOpen(true)}>
+            about
+          </button>
         </div>
       </header>
+
+      {aboutOpen && <AboutModal onClose={() => setAboutOpen(false)} />}
 
       <main className="main">
         <aside className="sidebar">

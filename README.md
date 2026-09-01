@@ -61,6 +61,10 @@ Refs accept `~`/`^` suffixes: `main~2`, `HEAD^`.
 `remote commit "colleague work"` is the key to interesting scenarios — it is what makes a later
 `push` get rejected and a `pull` produce a merge commit.
 
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup, checks to run before a PR, and project layout.
+
 ## Adding your own scenarios
 
 Add an entry to `src/scenarios.ts`:

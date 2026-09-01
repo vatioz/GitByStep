@@ -424,6 +424,99 @@ code {
   padding-left: 2px;
 }
 
+/* --------------------------------------------------------------- modal */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #05070ac0;
+  backdrop-filter: blur(2px);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+  padding: 20px;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 20px 60px #000000a0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.modal-close:hover {
+  background: var(--panel);
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.about-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.about-header p {
+  margin: 2px 0 0;
+  font-size: 12px;
+}
+
+.about-modal p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.about-modal h3 {
+  margin: 16px 0 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.about-meta {
+  margin: 16px 0 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  font-size: 13px;
+}
+
+.about-meta dt {
+  color: var(--muted);
+}
+
+.about-meta dd {
+  margin: 0;
+}
+
 /* ------------------------------------------------------------ repo panel */
 
 .repo-panel {
